@@ -3,6 +3,7 @@ module.exports.config = {
     version: "1.0.0",
     credits: "DungUwU (Khánh Milo Fix)",
     hasPermssion: 1,
+    usePrefix: true,
     description: "Turn off antiout",
     usages: "antiout on/off",
     commandCategory: "system",
