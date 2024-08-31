@@ -72,14 +72,14 @@
     "timeToUnsend": 10
   },
   "sing": {
-    "YOUTUBE_API": "AIzaSyCqox-KXEwDncsuo2HIpE0MF8J7ATln5Vc",
+    "YOUTUBE_API": "AIzaSyC-M5Z2_SGdMuPmYF3m5DoGHKzWGlf4gFM",
     "SOUNDCLOUD_API": "M4TSyS6eV0AcMynXkA3qQASGcOFQTWub"
   },
   "video": {
-    "YOUTUBE_API": "AIzaSyDEE1-zZSRVI8lTaQOVsIAQFgL-_BJKvhk"
+    "YOUTUBE_API": "AIzaSyC-M5Z2_SGdMuPmYF3m5DoGHKzWGlf4gFM"
   },
   "audio": {
-    "YOUTUBE_API": "AIzaSyDEE1-zZSRVI8lTaQOVsIAQFgL-_BJKvhk"
+    "YOUTUBE_API": "AIzaSyC-M5Z2_SGdMuPmYF3m5DoGHKzWGlf4gFM"
   },
   "menu": {
     "autoUnsend": true,
