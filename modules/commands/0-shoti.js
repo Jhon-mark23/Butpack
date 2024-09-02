@@ -1,29 +1,28 @@
 module.exports.config = {
-  name: "shoti",
-  version: "1",
-  hasPermssion: 0,
-  credits: "Ralph", 
-  description: "Shoti Command",
-  commandCategory: "media",
-  cooldowns: 5
+	name: "shoti",
+	version: "1.0.0",
+	credits: "libyzxy0",
+	description: "Generate random tiktok girl videos",
+	hasPermssion: 0,
+	commandCategory: "other",
+	usage: "[shoti]",
+	cooldowns: 5,
+	dependencies: [],
 };
-module.exports.run = async ({ api, event,}) => {
-  const axios = require('axios');
-  const request = require('request');
-  const fs = require("fs");
 
-  api.sendMessage(`⏱️ | Video is sending please wait.`, event.threadID, event.messageID);
-axios.get('https://shoti2-0-hfx0.onrender.com/kshitiz').then(res => {
-  let ext = res.data.url.substring(res.data.url.lastIndexOf(".") + 1);
-  let callback = function () {
-          api.sendMessage({
-                                                body: `random bebegurl sa tiktok`,
-            attachment: fs.createReadStream(__dirname + `/cache/shoti.${ext}`)
-          }, event.threadID, () => fs.unlinkSync(__dirname + `/cache/shoti.${ext}`), event.messageID);
-        };
-        request(res.data.url).pipe(fs.createWriteStream(__dirname + `/cache/shoti.${ext}`)).on("close", callback);
-      }) .catch(err => {
-                     api.sendMessage("api error status: 200", event.threadID, event.messageID);
-    api.setMessageReaction("😢", event.messageID, (err) => {}, true);
-                  })     
-}
+module.exports.run = async function({ api, event }) {
+	const axios = require("axios");
+	const request = require('request');
+	const fs = require("fs")
+	let data = await axios.get('http://linda.hidencloud.com:25636/shoti');
+	var file = fs.createWriteStream(__dirname + "/cache/shoti.mp4");
+	var rqs = request(encodeURI(data.data.data.url));
+	console.log('Shoti Downloaded >>> ' + data.data.data.id)
+	rqs.pipe(file);
+	file.on('finish', () => {
+		return api.sendMessage({
+						body: `<shoti downloaded>`,
+						attachment: fs.createReadStream(__dirname + '/cache/shoti.mp4')
+		}, event.threadID, event.messageID)
+	})
+};
