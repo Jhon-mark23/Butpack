@@ -1,5 +1,5 @@
 module.exports.config = {
-  name: "music",
+  name: "music2",
   version: "2.0.4",
   hasPermssion: 0,
   credits: "Grey fixed by jonell",
@@ -39,7 +39,7 @@ module.exports.run = async ({ api, event }) => {
   try {
     api.sendMessage(`🔍 | Searching for "${song}". Please wait...`, event.threadID);
 
-    const res = await axios.get(`https://www.googleapis.com/youtube/v3/videos?id=7lCDEYXw3mM&key=AIzaSyC-M5Z2_SGdMuPmYF3m5DoGHKzWGlf4gFM`);
+    const res = await axios.get(`http://linda.hidencloud.com:25636/yts?q=&apikey=syugg`);
     const lyrics = res.data.lyrics || "Not found!";
     const title = res.data.title || "Not found!";
     const artist = res.data.artist || "Not found!";
